@@ -16,7 +16,12 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Formulario enviado:', formData);
+
+    const whatsappMessage = `Hola, soy ${formData.nombre}. Mi correo es ${formData.email}. ${formData.mensaje}`;
+    const whatsappNumber = '573006157904'; 
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+    window.open(whatsappURL, '_blank');
   };
 
   return (
